@@ -130,17 +130,18 @@ export function CategoryTable({
           Toolbar: GridToolbar,
         }}
         pageSize={perPage}
-        disableColumnSelector
-        disableColumnFilter
-        disableDensitySelector
-        checkboxSelection
+        disableColumnSelector={true}
+        disableColumnFilter={true}
+        disableDensitySelector={true}
+        checkboxSelection={false}
         componentsProps={componentsProps}
-        filterMode={'server'}
-        paginationMode={'server'}
+        filterMode="server"
+        paginationMode="server"
         loading={isFetching}
         rowCount={rowCount}
         onPageChange={handleOnPageChange}
         onPageSizeChange={handleOnPageSizeChange}
+        onFilterModelChange={handleFilterChange}
       />
     </Box>
   );
