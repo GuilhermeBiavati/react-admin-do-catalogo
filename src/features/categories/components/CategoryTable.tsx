@@ -76,7 +76,7 @@ export function CategoryTable({
   ];
 
   function mapDataToGridRows(data: Results) {
-    const { data: categories } = data;
+    const { items: categories } = data;
 
     return categories.map((category) => ({
       id: category.id,
@@ -117,10 +117,10 @@ export function CategoryTable({
 
   const rows: GridRowsProp = data ? mapDataToGridRows(data) : [];
 
-  const rowCount = data?.meta.total || 0;
+  const rowCount = data?.total || 0;
 
   return (
-    <Box sx={{ display: 'flex', height: 600 }}>
+    <Box sx={{ display: 'flex', height: 300 }}>
       <DataGrid
         rows={rows}
         pagination={true}
@@ -133,7 +133,7 @@ export function CategoryTable({
         disableColumnSelector={true}
         disableColumnFilter={true}
         disableDensitySelector={true}
-        checkboxSelection={false}
+        checkboxSelection={true}
         componentsProps={componentsProps}
         filterMode="server"
         paginationMode="server"

@@ -24,16 +24,22 @@ function parseQueryParams(params: CategoryParams) {
     }
 
     if (params.perPage) {
-        query.append("per_page", params.perPage.toString());
+        query.append("perPage", params.perPage.toString());
     }
 
     if (params.search) {
         query.append("search", params.search);
     }
 
-    if (params.isActive) {
-        query.append("is_active", params.isActive.toString());
+    if (params.dir) {
+        query.append("dir", params.dir);
     }
+
+    if (params.sort) {
+        query.append("dir", params.sort);
+    }
+
+
 
     return query.toString();
 }
